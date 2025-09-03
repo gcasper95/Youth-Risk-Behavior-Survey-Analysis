@@ -151,11 +151,11 @@ This repository is dual-licensed under:
 
 - **GNU Affero General Public License v3.0 (AGPL-3.0)**  
   Applies to all source code in this repository (e.g., Python scripts, Jupyter Notebooks, and related functions).  
-  See the [LICENSE-AGPL](https://choosealicense.com/licenses/agpl-3.0/) file for details.
+  See the [LICENSE-AGPL](https://github.com/gcasper95/Youth-Risk-Behavior-Survey-Analysis/blob/main/LICENSE-AGPL) file for details.
 
 - **Creative Commons Zero v1.0 Universal (CC0-1.0)**  
   Applies to all non-code assets in this repository (e.g., Power BI reports, visualizations, exported figures, and CSV files derived from analyses).  
-  See the [LICENSE-CC0](https://choosealicense.com/licenses/cc0-1.0/) file for details.
+  See the [LICENSE-CC0](https://github.com/gcasper95/Youth-Risk-Behavior-Survey-Analysis/blob/main/LICENSE-CCO) file for details.
 
 In short:
 - **Code** → Copyleft protected under AGPL (derivatives must remain open if distributed or served).  
