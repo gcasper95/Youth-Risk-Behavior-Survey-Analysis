@@ -142,3 +142,25 @@ The following actions could be taken to improve data accuracy and identification
    1. Import the *Heatmap_stats.csv* file from its saved location. Open Power Query and copy all transformations from the applied steps in as found in the !!pbix file!!. Once completed, select the 'Close and Apply' button in Power Query.
    2. Create the *heatmap Measures* table, and recreate the measures by copying the DAX code as found in the !!pbix file!!.
    3. Navigate to the *National Statistics* page in the model view. Recreate the visuals by adding the appropriate fields to the correct spot, copying all visual formatting, and copying all visual and page filters as found in the !!pbix file!!.
+  
+## Licensing and Usage
+
+### License Information
+
+This repository is dual-licensed under:
+
+- **GNU Affero General Public License v3.0 (AGPL-3.0)**  
+  Applies to all source code in this repository (e.g., Python scripts, Jupyter Notebooks, and related functions).  
+  See the [LICENSE-AGPL](https://choosealicense.com/licenses/agpl-3.0/) file for details.
+
+- **Creative Commons Zero v1.0 Universal (CC0-1.0)**  
+  Applies to all non-code assets in this repository (e.g., Power BI reports, visualizations, exported figures, and CSV files derived from analyses).  
+  See the [LICENSE-CC0](https://choosealicense.com/licenses/cc0-1.0/) file for details.
+
+In short:
+- **Code** → Copyleft protected under AGPL (derivatives must remain open if distributed or served).  
+- **Visualizations & Reports** → Released to the public domain via CC0, free for any reuse without attribution.
+
+### Citation Information
+
+Casper, g. (2025). *Youth-Risk-Behavior-Survey-Analysis* [GitHub repository]. GitHub. https://github.com/gcasper95/Youth-Risk-Behavior-Survey-Analysis/edit/main/
