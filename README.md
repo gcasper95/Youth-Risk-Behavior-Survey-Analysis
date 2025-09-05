@@ -7,7 +7,7 @@
 **Email:** gcasper95@gmail.com
 <br>
 <br>
-This report 
+This project presents a visual and statistical analysis of select risk behaviors among U.S. high school students, using data from the Youth Risk Behavior Surveillance System (YRBSS). The purpose of this analysis was to identify persistent and emerging risk behaviors so that educators and policymakers can better prioritize interventions and allocate resources to reduce their negative impact.
 <br>
 
 ## Data Information
@@ -30,7 +30,7 @@ Power BI
 1. In the table titled 'Full Table', categorical columns for race, sex, and sexual identity were changed from type decimal number to type text, and the values were replaced with their corresponding variable descriptions found in the [2023 YRBS Combined Datasets User's Guide](https://www.cdc.gov/yrbs/media/pdf/2023/2023-YRBS-SADC-Documentation.pdf).
 2. A second table titled 'Analysis Table' was created by duplicating the altered 'Full Table' in step one and removing all fields that were not used for visual analysis. The table was linked to the 'Full Table' with a cardinality of one-to-one and a bi-directional cross filter. The 'Analysis Table' was used for statistical analysis in Python.
 3. Three separate dimensional tables were created for race, sex, and sexual identity. The dimensional tables were linked to the 'Full Table' with a cardinality of one-to-many and a singular direction cross filter from the dimensional tables to the 'Full Table'. The dimensional tables were used as a filtering method to eliminate any instances of blanks in visuals utilizing categorical fields.
-4. In the DAX query view, 11 queries were created to return all fields in the 'Analysis Table' by year, from 2003 to 2023. The query results were copied in their entirety and pasted into Google Sheets and all dpulicated headers were removed. The table was then exported into CSV format for statistical analysis in Python.
+4. In the DAX query view, 11 queries were created to return all fields in the 'Analysis Table' by year, from 2003 to 2023. The query results were copied in their entirety and pasted into Google Sheets and all duplicated headers were removed. The table was then exported into CSV format for statistical analysis in Python.
 5. In the table titled 'Heatmap Stats', imported from Python, the x and y column values were replaced with their corresponding Power BI risk behavior text descriptions used in the visualizations. The five columns containing the statistical values were unpivoted, resulting in two columns (Attribute & Value). The non-alphabetical characters in the attribute column were replaced with commas and split into three separate columns using the comma as a delimiter. A custom column named description was created in 'Heatmap Stats' to describe the statistic, the dependent variable, and the conditional variable. A second custom column named pairing label was created in 'Heatmap Stats' describing the risk behaviors. A third custom column named attribute names was created in 'Heatmap Stats' describing the statistical test used. Select values in the value column were replaced with null to remove them from the ranking visualizations, as the risks being assessed could not happen without the corresponding risks taking place.
 <br>
 
@@ -58,7 +58,7 @@ Python
 ### Methods
 
 1. Define Analysis Goal
-   + Identify national risk behavior trends over 20 years (or using the available data) by identity categorization along with uncategorized risk behavior correlations to provide insight into which behaviors represent emerging or persistent problem areas for educators and policy makers so that they can prioritize interventions and resources to reduce the likelihood of their negative consequences.
+   + Identify national risk behavior trends over 20 years (or using the available data) by identity categorization along with uncategorized risk behavior correlations to provide insight into which behaviors represent emerging or persistent problem areas so educators and policy makers can prioritize interventions and resources to reduce the likelihood of their negative consequences.
 2. Formulate Research Questions
    +  Which risk behavior trends are increasing or decreasing?
    +  Which demographic groups have a greater percentage of participation in certain risk behaviors?
@@ -123,25 +123,25 @@ The following actions could be taken to improve data accuracy and identification
 |Seaborn | 0.13.2 |
 
 2. Download the 2023 National Combined High School YRBSS dataset [here](https://www.cdc.gov/yrbs/data/index.html).
-3. Download the pbix file here (create pbix file link).
+3. Download the *YRBSS.pbix* file [here](https://github.com/gcasper95/Youth-Risk-Behavior-Survey-Analysis/blob/main/YRBSS%20Power%20BI/YRBSS.pbix).
    1. If opting to recreate the Power BI report from scratch, open a blank Power BI project and import the downloaded dataset via Access Database, navigating to the location of where the dataset is stored on within the computer.
-   2. Navigate to the dataset in Power Query and reproduce all table creations and transformations as found in the !!pbix file!!. Importation and transformation of the *Heatmap Stats* table will be conducted later. Select the 'Close and Apply' button in Power Query.
-   3. With the home tab selected, create the *Race_Dim*, *Sex_Dim*, and *SexId_Dim* dimension tables by copying the corresponding DAX code from the !!pbix file!! for each table. Create a single measure in each table by copying the DAX code as found in the !!pbix file!!.
-   4. Navigate to the model view in Power BI and copy the relationships as found in the !!pbix file!!.
-   5. Recreate all tables, measures, and calculated columns (excluding the *Heatmap Stats* table, *Heatmap Measures* table and the associated calculated columns) as found in the !!pbix file!! by creating each individual table and copying the DAX code for each measure and calculated column.
-   6. Create and name the 9 pages according to the !!pbix file!!. Recreate all visuals by adding the appropriate fields to the correct spot, copying all visual formatting, and copying all visual and page filters as found in the !!pbix file!!, excluding the *National Statistics* page.
-      + Note: The background in the !!pbix file!! cannot be created in Power BI and is not available for reproduction. The background will not have any effect on any visuals, formatting, or calculations in the model.
-   7. Navigate to the DAX query view. Copy and run all queries as found in the !!pbix file!!. Copy the entire table of each query and paste them into Google Sheets or the preferred spreadsheet program. The first row of the spreadsheet should contain the headers, and any duplicates of the header line should be removed. There should be no empty rows between each copy and paste. Once all tables have been put into the spreadsheet with the appropriate formatting, export the spreadsheet as a CSV file and store in an approriate location on the computer.
-4. Open JupyterLab and replicate the ipynb notebook using one of the following methods:
+   2. Navigate to the dataset in Power Query and reproduce all table creations and transformations as found in *YRBSS.pbix* file. Importation and transformation of the *Heatmap Stats* table will be conducted later. Select the 'Close and Apply' button in Power Query.
+   3. With the home tab selected, create the *Race_Dim*, *Sex_Dim*, and *SexId_Dim* dimension tables by copying the corresponding DAX code from the !!pbix file!! for each table. Create a single measure in each table by copying the DAX code as found in the *YRBSS.pbix* file.
+   4. Navigate to the model view in Power BI and copy the relationships as found in the *YRBSS.pbix* file.
+   5. Recreate all tables, measures, and calculated columns (excluding the *Heatmap Stats* table, *Heatmap Measures* table and the associated calculated columns) as found in the *YRBSS.pbix* file by creating each individual table and copying the DAX code for each measure and calculated column.
+   6. Create and name the 9 pages according to the *YRBSS.pbix* file. Recreate all visuals by adding the appropriate fields to the correct spot, copying all visual formatting, and copying all visual and page filters as found in the *YRBSS.pbix* file, excluding the *National Statistics* page.
+      + Note: The background in the *YRBSS.pbix* file cannot be created in Power BI and is not available for reproduction. The background will not have any effect on any visuals, formatting, or calculations in the model.
+   7. Navigate to the DAX query view. Copy and run all queries as found in the *YRBSS.pbix* file. Copy the entire table of each query and paste them into Google Sheets or the preferred spreadsheet program. The first row of the spreadsheet should contain the headers, and any duplicates of the header line should be removed. There should be no empty rows between each copy and paste. Once all tables have been put into the spreadsheet with the appropriate formatting, export the spreadsheet as a CSV file and store in an approriate location on the computer.
+4. Open JupyterLab and replicate the *YRBSS_23-03_stats.ipynb* notebook using one of the following methods:
    1. Copy the notebook URL from GitHub, navigate back to JupyterLab, select *Open from URL...* from the file tab, paste the URL in the pop-up text box, and select open.
-   2. Download the notebook file from GitHub, navigate back to JupyterLab, and drag the downloaded notebook files into the file browser tab or copy the path of the notebook from its storage location and select *Open from Path...* from the file tab, paste the path in the pop-up text box, and select open.
+   2. Download the notebook file from GitHub (found [here](https://github.com/gcasper95/Youth-Risk-Behavior-Survey-Analysis/blob/main/YBRSS_23-03_stats.ipynb)), navigate back to JupyterLab, and drag the downloaded notebook files into the file browser tab or copy the path of the notebook from its storage location and select *Open from Path...* from the file tab, paste the path in the pop-up text box, and select open.
    3. Copy and the individual cells from the GitHub file and paste them into a newly launched JupyterLab notebook, making note of which cells are code and which cells are markdown.
    4. In the JupyterLab notebook, run each cell starting with the top cell and moving down in sequential order to view the output. In order to view the outputs and visualizations, replace the current file path (located in the second code cell) with the previously saved CSV file path.
    5. Locate the *Heatmap_stats.csv* file after running the last code cell and store the file in an approriate place on the computer.
 5. If recreating the Power BI report from scratch, return to the Power BI report and continue with the following instructions.
-   1. Import the *Heatmap_stats.csv* file from its saved location. Open Power Query and copy all transformations from the applied steps in as found in the !!pbix file!!. Once completed, select the 'Close and Apply' button in Power Query.
-   2. Create the *heatmap Measures* table, and recreate the measures by copying the DAX code as found in the !!pbix file!!.
-   3. Navigate to the *National Statistics* page in the model view. Recreate the visuals by adding the appropriate fields to the correct spot, copying all visual formatting, and copying all visual and page filters as found in the !!pbix file!!.
+   1. Import the *Heatmap_stats.csv* file from its saved location. Open Power Query and copy all transformations from the applied steps in as found in the *YRBSS.pbix* file. Once completed, select the 'Close and Apply' button in Power Query.
+   2. Create the *Heatmap Measures* table, and recreate the measures by copying the DAX code as found in the *YRBSS.pbix* file.
+   3. Navigate to the *National Statistics* page in the model view. Recreate the visuals by adding the appropriate fields to the correct spot, copying all visual formatting, and copying all visual and page filters as found in the *YRBSS.pbix* file.
   
 ## Licensing and Usage
 
@@ -150,7 +150,7 @@ The following actions could be taken to improve data accuracy and identification
 This repository is dual-licensed under:
 
 - **GNU Affero General Public License v3.0 (AGPL-3.0)**  
-  Applies to all source code in this repository (e.g., Python scripts, Jupyter Notebooks, and related functions).  
+  Applies to all source code in this repository (e.g., DAX/M queries, Python scripts, Jupyter Notebooks, and related functions).  
   See the [LICENSE-AGPL](https://github.com/gcasper95/Youth-Risk-Behavior-Survey-Analysis/blob/main/LICENSE-AGPL) file for details.
 
 - **Creative Commons Zero v1.0 Universal (CC0-1.0)**  
